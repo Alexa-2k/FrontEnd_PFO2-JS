@@ -220,11 +220,32 @@ En este caso no controlamos espacios dobles para no complicar la lógica, ya que
 Escribe una función que tome un número n y devuelva los primeros n números de la sucesión de Fibonacci.
 console.log(fibonacci(5)); // Resultado: [0, 1, 1, 2, 3]*/
 
+function fibonacci(n) {
+	let result = [];
+	if (n <= 0) return result;
+	if (n === 1) return [0]; // Solo el primer término
 
+	let x = 0;
+	let z = 1;
+	result.push(x); // 0
+	result.push(z); // 1
 
+	for (let k = 2; k < n; k++) {
+		let fib = x + z;
+		result.push(fib);
+		x = z;
+		z = fib;
+	}
+	return result;
+}
 
-
-
+let terms = parseInt(
+	prompt(
+		"Por favor, ingresa el número de términos de la sucesión de Fibonacci:"
+	)
+);
+let fibSequence = fibonacci(terms);
+console.log(fibSequence);
 
 
 /*====================================================================================*/

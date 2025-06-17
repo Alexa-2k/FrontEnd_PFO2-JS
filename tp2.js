@@ -214,6 +214,9 @@ if (sentence5 !== null) {
 	);
 
 }
+
+console.log("/////////////////////////////\n");
+
 /* /*En este ejercicio agregamos la lógica para el caso en el que el usuario no ingrese nada, o ingrese sólo espacios. 
 Una vez que el usuario ingresa datos válidos, comienza la lógica solicitada: 
 
@@ -224,3 +227,67 @@ Una vez que el usuario ingresa datos válidos, comienza la lógica solicitada:
 
 En este caso no controlamos espacios dobles para no complicar la lógica, ya que no se solicita en el ejercicio 
 */
+/*============================================================*/
+
+console.log("\nSolución 7: Mostrar n términos de la secuencia de Fibonacci");
+console.log("///////////////");
+
+function fibonacci(n) {
+	let result = [];
+	if (n <= 0) return result;
+	if (n === 1) return [0]; // Solo el primer término
+
+	let x = 0;
+	let z = 1;
+	result.push(x); // 0
+	result.push(z); // 1
+
+	for (let k = 2; k < n; k++) {
+		let fib = x + z;
+		result.push(fib);
+		x = z;
+		z = fib; 
+	};
+	return result;
+}
+
+let terms = parseInt(
+	prompt(
+		"Por favor, ingresa el número de términos de la sucesión de Fibonacci:"
+	)
+);
+let fibSequence = fibonacci(terms);
+console.log(fibSequence);
+
+
+/*Este ejercicio se puede resolver con un bucle como en esta primera solución, o aplicando recursividad, como lo haremos en la segunda solución
+La secuencia de Fibonacci se inicia en 0 y 1, y continúa sumando los dos términos anteriores para formar el actual. Así,  se forma 0, 1, 1 (0+1) , 2 (1+1), 3 (1+2), 5 (2+3), etc.
+Siguiendo esa lógica construimos el bucle for, lo recorremos hasta el número de términos solicitados por el usuario, y vamos almacenando los términos en un arreglo llamado result. 
+En el caso de que el usuario indique cero o un número negativo, se devuelve el arreglo vacío.  
+*/
+
+// Función recursiva que devuelve el término n de la sucesión de Fibonacci
+
+console.log("Solución 7: Términos de la sucesión de Fibonacci por recursión");
+
+function recursiveFibonacci(term) {
+	if (term <= 0) return 0;
+	if (term === 1) return 1;
+	return recursiveFibonacci(term - 1) + recursiveFibonacci(term - 2);
+}
+
+// Pedimos al usuario cuántos términos quiere generar
+let term = parseInt(
+	prompt("Por favor, ingresa el número de términos de la sucesión de Fibonacci:")
+);
+
+// Creamos un array y lo llenamos con los primeros m términos
+let recursiveSequence = [];
+
+for (let i = 0; i < term; i++) {
+	recursiveSequence.push(recursiveFibonacci(i));
+}
+
+// Mostramos el resultado
+console.log(recursiveSequence);
+console.log("/////////////////////");
