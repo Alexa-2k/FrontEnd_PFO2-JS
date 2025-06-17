@@ -7,23 +7,31 @@ imprimir un mensaje por consola. Las que retornan algo, deberán incluir la pala
 // Longitud = ancho x alto
 console.log(calcularAreaRectangulo(5, 3)); // Resultado: 15*/
 
-let base = prompt(
-	"Vamos a calcular el área de un rectángulo. Por favor, ingresa el valor de la base, en metros: "
-);
-
-let height = prompt(
-	"Gracias! Ahora, por favor ingresa el valor de la altura, en metros: "
-);
-
 const rectangleArea = (b, h) => b * h;
 
-console.log(
-	`El área del rectángulo es: ${rectangleArea(base, height)} metros cuadrados`
-);
+for (let i = 1; i <= 3; i++) {
+	let base = prompt(
+		`(${i}/3) Vamos a calcular el área de un rectángulo. Por favor, ingresa el valor de la base, en metros:`
+	);
+
+	let height = prompt(
+		`(${i}/3) Gracias! Ahora, por favor ingresa el valor de la altura, en metros:`
+	);
+
+	let area = rectangleArea(base, height);
+
+	console.log(`(${i}/3) El área del rectángulo es: ${area} metros cuadrados`);
+
+	alert(`(${i}/3) El área del rectángulo es: ${area} metros cuadrados`);
+}
+
+
 
 
 /*Se propone que se le solicite al usuario el ingreso de los datos de base y altura, para luego calcular el área del rectángulo con una función flecha y mostrarlo en pantalla.
-Se eligió la función flecha dado que el cálculo puede resolverse en una línea.*/
+Se eligió la función flecha dado que el cálculo puede resolverse en una línea.
+Además de mostrar el resultado en consola, se muestra un alert
+Se incluye un bucle for para que el ejercicio se repita 3 veces  */
 
 /*====================================================================================*/
 /*2. Contar palabras en una cadena
