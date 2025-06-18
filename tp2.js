@@ -12,7 +12,7 @@ console.log("/////////////////////////////\n");
 /* 
 Se propone resolver el cálculo del área de un rectángulo con una función flecha, por ser un caso simple. 
 El cálculo consiste en multiplicar base por altura. 
-La función retorna el valor y no imprime por consola. El `console.log()` se utiliza fuera de la función. 
+La función retorna el valor y no imprime por consola: console.log() se utiliza fuera de la función. 
 */
 
 /*============================================================*/
@@ -50,7 +50,7 @@ console.log(
 
 console.log("/////////////////////////////\n");
 
-/* La lógica utilizada consistió en contar los espacios y sumar 1 a ese conteo, razonamiento que funciona mientras el usuario no introduzca espacios dobles o espacios al inicio o al final de la frase. 
+/* La lógica utilizada consistió en contar los espacios y sumar 1 a ese conteo, ya que el número de palabras en una frase es igual al número de espacios más uno. Este razonamiento funciona mientras el usuario no introduzca espacios dobles o espacios al inicio o al final de la frase. 
 En la variable sentence usamos el método split, que divide la frase en un arreglo de palabras, con un caracter establecido como delimitador (en este caso, el espacio) pero si el usuario introduce espacios dobles, el resultado no es el esperado. Por eso propusimos la solución 2b*/
 
 
@@ -63,9 +63,22 @@ function wordCount(str) {
 	return str.trim().split(/\s+/).length;
 }
 
-console.log(wordCount(sentence1)); // Resultado: 5
-console.log(wordCount(sentence2)); // Resultado: 5
-console.log(wordCount(sentence3)); // Resultado: 4
+console.log(
+	`La frase ingresada es "${sentence1}" y tiene ${wordCount(
+		sentence1
+	)} palabras`
+);
+console.log(
+	`La frase ingresada es "${sentence2}" y tiene ${wordCount(
+		sentence2
+	)} palabras`
+);
+console.log(
+	`La frase ingresada es "${sentence3}" y tiene ${wordCount(
+		sentence3
+	)} palabras`
+);
+
 console.log("/////////////////////////////\n");
 
 /* 
@@ -92,14 +105,18 @@ function contarVocales(str) {
 	return count;
 }
 
-console.log(contarVocales("Álamo ígneo")); // Resultado: 6
-console.log(contarVocales("Planté árboles")); // Resultado: 5
-console.log(contarVocales("rEconOcErÍa")); // Resultado: 6
+console.log(`La frase "Álamo ígneo" tiene ${contarVocales("Álamo ígneo")} vocales`); //Resultado: 6
+console.log(`La frase "Planté árboles" tiene ${contarVocales("Planté árboles")} vocales`); 	// Resultado: 5
+console.log(
+	`La frase "rEconOcErÍa mUrciÉlAgos Únicos" tiene ${contarVocales(
+		"rEconOcerÍa mUrciÉlAgos Únicos"
+	)} vocales`
+); // Resultado: 14
 console.log("/////////////////////////////\n");
 
 /* 
-En principio pensamos en un if que verificara si el carácter era alguna de las vocales. Pero si tomábamos la posibilidad de que el usuario ingresase mayúsculas, o vocalees con tildes, tanto minúsculas como mayúsculas, las condiciones de evaluación para el if() serían demasiado extensas.
-Por eso decidimoe armar una variable que reuniese todas las posibilidades, y usamos includes() en lugar de un if().
+En principio pensamos en un if que verificara si el carácter era alguna de las vocales. Pero si tomábamos la posibilidad de que el usuario ingresase mayúsculas y vocales con tildes -tanto minúsculas como mayúsculas- las condiciones de evaluación para el if() serían demasiado extensas.
+Por eso decidimos armar una variable que reuniese todas las posibilidades, y usamos includes() para la comparación, en lugar de un if().
 La función recorre la cadena carácter por carácter y verifica si el mismo pertenece al conjunto de vocales.
 Cada coincidencia suma al contador. 
 */
@@ -268,15 +285,15 @@ En el caso de que el usuario indique cero o un número negativo, se devuelve el 
 
 // Función recursiva que devuelve el término n de la sucesión de Fibonacci
 
-console.log("Solución 7: Términos de la sucesión de Fibonacci por recursión");
-
+console.log("\nSolución 7: Términos de la sucesión de Fibonacci por recursión");
+console.log("///////////////");
 function recursiveFibonacci(term) {
 	if (term <= 0) return 0;
 	if (term === 1) return 1;
 	return recursiveFibonacci(term - 1) + recursiveFibonacci(term - 2);
 }
 
-// Pedimos al usuario cuántos términos quiere generar
+// preguntamos al usuario cuántos términos quiere generar
 let term = parseInt(
 	prompt("Por favor, ingresa el número de términos de la sucesión de Fibonacci:")
 );
@@ -290,4 +307,151 @@ for (let i = 0; i < term; i++) {
 
 // Mostramos el resultado
 console.log(recursiveSequence);
-console.log("/////////////////////");
+console.log("/////////////////////////\n");
+
+/*============================================================*/
+
+console.log("\nSolución 8: Productos");
+console.log("///////////////");
+
+const productos = [
+{ id: 1, nombre: 'Laptop', precio: 1200, stock: 15, categoria: 'electrónica' },
+{ id: 2, nombre: 'Mouse', precio: 25, stock: 50, categoria: 'electrónica' },
+{ id: 3, nombre: 'Teclado', precio: 45, stock: 30, categoria: 'electrónica' },
+{ id: 4, nombre: 'Monitor', precio: 300, stock: 20, categoria: 'electrónica' },
+{ id: 5, nombre: 'Libro', precio: 15, stock: 100, categoria: 'libros' }
+];
+
+// 1. Usando forEach: Mostrar en consola cada producto con su nombre y precio
+console.log("Mostrar en consola cada producto con su nombre y precio");
+productos.forEach((producto) =>	console.log(`Artículo: ${producto.nombre}  $ ${producto.precio}`)); 
+console.log("----------------------------");
+
+// 2. Usando map: Crear un array con solo los nombres de los productos
+console.log("Mostrar un array que sólo liste los nombres de los productos");
+const stockMap = productos.map(producto => producto.nombre);
+console.log(stockMap);
+console.log("----------------------------");
+
+// 3. Usando filter: Obtener productos electrónicos con stock mayor a 20
+console.log("Listar los productos electrónicos con stock mayor a 20");
+const filteredStock = productos.filter((producto) => producto.categoria === 'electrónica' && producto.stock > 20);
+console.log("Los artículos con stock mayor a 20 unidades son: ", filteredStock);
+console.log("----------------------------");
+
+// 4. Usando find: Encontrar el producto con id 3
+console.log("Encontrar el producto con id 3");
+const producto3 = productos.find((producto) => producto.id === 3);
+console.log("El producto con id 3 es: ", producto3);
+console.log("----------------------------");
+
+// 5. Usando reduce: Calcular el valor total del inventario (precio * stock)
+console.log("Calcular el valor total del inventario");
+const totalStockValue = productos.reduce(
+	(accumulator, producto) => {return accumulator + producto.precio * producto.stock;},
+	0);
+console.log("El valor total del inventario es: $", totalStockValue);
+
+console.log("/////////////////////////\n");
+
+/*============================================================*/
+
+console.log("\nSolución 9: Estudiantes");
+console.log("///////////////");
+
+const estudiantes = [
+{ id: 1, nombre: 'Ana', edad: 20, calificaciones: [8, 9, 7, 8] },
+{ id: 2, nombre: 'Carlos', edad: 22, calificaciones: [6, 7, 8, 7] },
+{ id: 3, nombre: 'María', edad: 21, calificaciones: [9, 9, 8, 10] },
+{ id: 4, nombre: 'Juan', edad: 19, calificaciones: [7, 6, 5, 8] }
+];
+
+// 1. Usando forEach: Mostrar nombre y edad de cada estudiante
+console.log("Mostrar nombre y edad de cada estudiante");
+const showStudentsData = estudiantes.forEach((estudiante) => console.log(`Nombre: ${estudiante.nombre}, Edad: ${estudiante.edad}`));
+console.log("----------------------------");
+
+// 2. Usando map: Crear array de objetos con nombre y promedio de calificaciones
+console.log("Mostrar nombre y promedio de calificaciones");
+const studentsMap = estudiantes.map((estudiante) => {const suma = estudiante.calificaciones.reduce((acc, nota) => acc + nota, 0);
+  const promedio = suma / estudiante.calificaciones.length;
+  return {
+    nombre: estudiante.nombre,
+    promedio: promedio
+  };
+});
+
+console.log(studentsMap);
+console.log("----------------------------");
+
+
+// 3. Usando filter: Obtener estudiantes con promedio mayor a 7.5
+console.log("Listar estudiantes con promedio mayor a 7.5");
+const filteredGrades = studentsMap.filter(
+	est => est.promedio > 7.5);
+console.log("Los alumnos con promedio mayor a 7.5 son: ", filteredGrades);
+console.log("----------------------------");
+
+
+// 4. Usando find: Encontrar estudiante llamado 'María'
+console.log("Encontrar estudiante llamado 'María'");
+const findStudent = estudiantes.find((student) => student.nombre === "María");
+console.log(findStudent);
+console.log("----------------------------");	
+
+
+//5. Usando reduce: Calcular la edad promedio de los estudiantes
+console.log("Calcular la edad promedio de los estudiantes");
+const ageMain = estudiantes.reduce((acum, stud) => acum + stud.edad, 0) / estudiantes.length;
+console.log("El promedio de edad de los estudiantes es: ", ageMain, " años");
+
+console.log("/////////////////////////\n");
+
+
+/*============================================================*/
+
+console.log("\nSolución 10: Películas");
+console.log("///////////////");
+
+const peliculas = [
+{ id: 1, titulo: 'El Padrino', año: 1972, duracion: 175, genero: 'drama', rating: 9.2 },
+{ id: 2, titulo: 'Pulp Fiction', año: 1994, duracion: 154, genero: 'crimen', rating: 8.9 },
+{ id: 3, titulo: 'El Señor de los Anillos', año: 2001, duracion: 178, genero: 'fantasía', rating: 8.8 },
+{ id: 4, titulo: 'Interestelar', año: 2014, duracion: 169, genero: 'ciencia ficción', rating: 8.6 },
+{ id: 5, titulo: 'Parásitos', año: 2019, duracion: 132, genero: 'drama', rating: 8.6 }
+];
+
+// 1. Usando forEach: Mostrar título y año de cada película
+console.log("Título y año de cada película");
+peliculas.forEach((movie) =>
+	console.log(`Título: ${movie.titulo}, Año: ${movie.año} `)
+); 
+console.log("----------------------------");
+
+// 2. Usando map: Crear array de títulos en mayúsculas
+console.log("Títulos en mayúsculas");
+const titlesMap = peliculas.map((movie) => movie.titulo.toUpperCase());
+console.log(titlesMap);
+console.log("----------------------------");
+
+// 3. Usando filter: Obtener películas de drama con rating mayor a 8.5
+const filteredBestDrama = peliculas.filter(
+	(movie) => movie.genero === "drama" && movie.rating > 8.5
+);
+console.log("Los dramas con rating mayor a 8.5 son: ", filteredBestDrama);
+console.log("----------------------------");
+
+// 4. Usando find: Encontrar película estrenada en 2014
+console.log("Encontrar filme estrenado en 2014");
+const findMovie = peliculas.find((movie) => movie.año === 2014);
+console.log(findMovie);
+console.log("----------------------------");
+
+// 5. Usando reduce: Calcular la duración total de todas las películas
+console.log("Calcular la duración total de todas las peliculas");
+const moviesLength = peliculas.reduce((accum, movie) => accum + movie.duracion, 0);
+console.log("La duración total de todas las peliculas es: ", moviesLength, " minutos"); 
+
+console.log("----------------------------");
+
+
