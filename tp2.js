@@ -136,6 +136,7 @@ Cada coincidencia suma al contador.
 	console.log("///////////////");
 
 	function isAPalindrome(str) {
+		str = str.toLowerCase(); 
 		let chars = str.split("");
 		let invertedChars = [];
 		for (let i = 0; i < chars.length; i++) {
