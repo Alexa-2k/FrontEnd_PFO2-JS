@@ -1,0 +1,98 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fef9f4;
+    /* Fondo pastel suave */
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    background: #fffdfa;
+    max-width: 550px;
+    width: 100%;
+    padding: 25px 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border: 2px solid #f7e8e1;
+}
+
+h1 {
+    text-align: center;
+    color: #6a5acd;
+    /* lavanda */
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    letter-spacing: 1.2px;
+    border-bottom: 3px solid #b4a7d6;
+    padding-bottom: 12px;
+}
+
+h2 {
+    color: #5f7998;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-left: 5px solid #a0d8ef;
+    padding-left: 10px;
+}
+
+h3 {
+    background: #e8f0fe;
+    margin: 6px 0;
+    padding: 10px 15px;
+    border-radius: 6px;
+    color: #444;
+    box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    cursor: default;
+}
+
+h3:hover {
+    background-color: #d3e9ff;
+}
+
+#btnEjecutar {
+    border-radius: 10px;
+    background-color: #6a5acd;
+    /* violeta pastel */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: block;
+    margin: 30px auto;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.4s ease, transform 0.2s ease;
+    /*box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);*/
+    box-shadow: 10px 10px 10px rgba(0, 0, 128, 0.6)
+}
+
+#btnEjecutar:hover {
+    background-color: #5a4bb8;
+    transform: scale(1.03);
+}
+
+#btnText {
+   /* color: #5a4bb8;*/
+    font-weight: bolder;
+
+}
+
+body>main>h3:last-child {
+    margin-top: 40px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #6a5acd;
+    box-shadow: none;
+    background: none;
+    cursor: default;
+}
