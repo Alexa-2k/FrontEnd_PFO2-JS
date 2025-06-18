@@ -355,18 +355,18 @@ En el caso de que el usuario indique cero o un número negativo, se devuelve el 
 
 	// 2. Usando map: Crear un array con solo los nombres de los productos
 	console.log("Mostrar un array que sólo liste los nombres de los productos");
-	const stockMap = productos.map((producto) => producto.nombre);
-	console.log(stockMap);
+	const productsNamesMap = productos.map((producto) => producto.nombre);
+	console.log(productsNamesMap);
 	console.log("----------------------------");
 
 	// 3. Usando filter: Obtener productos electrónicos con stock mayor a 20
 	console.log("Listar los productos electrónicos con stock mayor a 20");
-	const filteredStock = productos.filter(
+	const electronicsBigStock = productos.filter(
 		(producto) => producto.categoria === "electrónica" && producto.stock > 20
 	);
 	console.log(
 		"Los artículos con stock mayor a 20 unidades son: ",
-		filteredStock
+		electronicsBigStock
 	);
 	console.log("----------------------------");
 
@@ -399,7 +399,7 @@ En el caso de que el usuario indique cero o un número negativo, se devuelve el 
 
 	// 1. Usando forEach: Mostrar nombre y edad de cada estudiante
 	console.log("Mostrar nombre y edad de cada estudiante");
-	const showStudentsData = estudiantes.forEach((estudiante) =>
+	estudiantes.forEach((estudiante) =>
 		console.log(`Nombre: ${estudiante.nombre}, Edad: ${estudiante.edad}`)
 	);
 	console.log("----------------------------");
@@ -420,8 +420,8 @@ En el caso de que el usuario indique cero o un número negativo, se devuelve el 
 
 	// 3. Usando filter: Obtener estudiantes con promedio mayor a 7.5
 	console.log("Listar estudiantes con promedio mayor a 7.5");
-	const filteredGrades = studentsMap.filter((est) => est.promedio > 7.5);
-	console.log("Los alumnos con promedio mayor a 7.5 son: ", filteredGrades);
+	const bestGrades = studentsMap.filter((est) => est.promedio > 7.5);
+	console.log("Los alumnos con promedio mayor a 7.5 son: ", bestGrades);
 	console.log("----------------------------");
 
 	// 4. Usando find: Encontrar estudiante llamado 'María'
