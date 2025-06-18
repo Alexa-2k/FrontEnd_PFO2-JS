@@ -25,7 +25,7 @@ El código se podría ajustar aún más, teniendo en cuenta la posibilidad de qu
 
 
 ## Ejercicio 3 – Contar vocales
-En principio pensamos en un if que verificara si el carácter era alguna de las vocales. Pero si tomábamos la posibilidad de que el usuario ingresase mayúsculas y vocales con tildes -tanto minúsculas como mayúsculas- las condiciones de evaluación para el *if()* serían demasiado extensas.  
+En principio pensamos en un *if()* que verificara si el carácter era alguna de las vocales. Pero si tomábamos la posibilidad de que el usuario ingresase mayúsculas y vocales con tildes -tanto minúsculas como mayúsculas- las condiciones de evaluación para el *if()* serían demasiado extensas.  
 Por eso decidimos armar una variable que reuniese todas las posibilidades, y usamos *includes()* para la comparación, en lugar de un *if()*.  
 La función recorre la cadena carácter por carácter y verifica si el mismo pertenece al conjunto de vocales.  
 Cada coincidencia suma al contador.
@@ -36,13 +36,13 @@ Aplicamos un prompt para solicitar al usuario que ingrese una palabra o número.
 El string se pasa a minúsculas y se eliminan espacios, para que no se afecte el resultado.   
 Luego se invierte la cadena ingresada y se compara con la original.  
 Si son iguales, la cadena ingresada es un palíndromo.  
-Con el bucle for se repite el ejercicio 3 veces.
+Con el bucle *for()* se repite el ejercicio 3 veces.
 
 
 ##  Ejercicio 5 – Calcular edad de un perro en años humanos
  Aplicamos un prompt para que se solicite al usuario el ingreso de la edad del perro.  
  Se Multiplica la edad por 7, como indica la fórmula para edad canina.  
- El bucle *for* hace que el ejercicio se repita 3 veces.
+ El bucle *for()* hace que el ejercicio se repita 3 veces.
 
 
 ## Ejercicio 6 – Iniciar palabras con mayúscula
