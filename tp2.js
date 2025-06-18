@@ -318,7 +318,7 @@ En el caso de que el usuario indique cero o un número negativo, se devuelve el 
 	console.log(recursiveSequence);
 	console.log("/////////////////////////\n");
 
-/*
+	/*
 Esta segunda solución implementa *recursividad* para calcular los términos de Fibonacci.   
 La función se llama a sí misma con los dos términos anteriores hasta alcanzar los casos base.   
 Luego, se construye la secuencia repitiendo este cálculo en un bucle hasta completar la cantidad de términos deseados.
@@ -355,20 +355,20 @@ Luego, se construye la secuencia repitiendo este cálculo en un bucle hasta comp
 		{ id: 5, nombre: "Libro", precio: 15, stock: 100, categoria: "libros" },
 	];
 
-// 1. Usando forEach: Mostrar en consola cada producto con su nombre y precio
+	// 1. Usando forEach: Mostrar en consola cada producto con su nombre y precio
 	console.log("Mostrar en consola cada producto con su nombre y precio");
 	productos.forEach((producto) =>
 		console.log(`Artículo: ${producto.nombre}  $ ${producto.precio}`)
 	);
 	console.log("----------------------------");
 
-// 2. Usando map: Crear un array con solo los nombres de los productos
+	// 2. Usando map: Crear un array con solo los nombres de los productos
 	console.log("Mostrar un array que sólo liste los nombres de los productos");
 	const productsNamesMap = productos.map((producto) => producto.nombre);
 	console.log(productsNamesMap);
 	console.log("----------------------------");
 
-// 3. Usando filter: Obtener productos electrónicos con stock mayor a 20
+	// 3. Usando filter: Obtener productos electrónicos con stock mayor a 20
 	console.log("Listar los productos electrónicos con stock mayor a 20");
 	const electronicsBigStock = productos.filter(
 		(producto) => producto.categoria === "electrónica" && producto.stock > 20
@@ -379,13 +379,13 @@ Luego, se construye la secuencia repitiendo este cálculo en un bucle hasta comp
 	);
 	console.log("----------------------------");
 
-// 4. Usando find: Encontrar el producto con id 3
+	// 4. Usando find: Encontrar el producto con id 3
 	console.log("Encontrar el producto con id 3");
 	const producto3 = productos.find((producto) => producto.id === 3);
 	console.log("El producto con id 3 es: ", producto3);
 	console.log("----------------------------");
 
-// 5. Usando reduce: Calcular el valor total del inventario (precio * stock)
+	// 5. Usando reduce: Calcular el valor total del inventario (precio * stock)
 	console.log("Calcular el valor total del inventario");
 	const totalStockValue = productos.reduce((accumulator, producto) => {
 		return accumulator + producto.precio * producto.stock;
@@ -394,7 +394,7 @@ Luego, se construye la secuencia repitiendo este cálculo en un bucle hasta comp
 
 	console.log("/////////////////////////\n");
 
-/* 	
+	/* 	
 Este ejercicio presenta un arreglo de productos, y con distintos métodos mostramos información útil:
   1. **forEach()**: muestra cada producto con su nombre y precio
   2. **map()**: genera un array con solo los nombres
@@ -415,14 +415,14 @@ Este ejercicio presenta un arreglo de productos, y con distintos métodos mostra
 		{ id: 4, nombre: "Juan", edad: 19, calificaciones: [7, 6, 5, 8] },
 	];
 
-// 1. Usando forEach: Mostrar nombre y edad de cada estudiante
+	// 1. Usando forEach: Mostrar nombre y edad de cada estudiante
 	console.log("Mostrar nombre y edad de cada estudiante");
 	estudiantes.forEach((estudiante) =>
 		console.log(`Nombre: ${estudiante.nombre}, Edad: ${estudiante.edad}`)
 	);
 	console.log("----------------------------");
 
-// 2. Usando map: Crear array de objetos con nombre y promedio de calificaciones
+	// 2. Usando map: Crear array de objetos con nombre y promedio de calificaciones
 	console.log("Mostrar nombre y promedio de calificaciones");
 	const studentsMap = estudiantes.map((estudiante) => {
 		const suma = estudiante.calificaciones.reduce((acc, nota) => acc + nota, 0);
@@ -436,19 +436,19 @@ Este ejercicio presenta un arreglo de productos, y con distintos métodos mostra
 	console.log(studentsMap);
 	console.log("----------------------------");
 
-// 3. Usando filter: Obtener estudiantes con promedio mayor a 7.5
+	// 3. Usando filter: Obtener estudiantes con promedio mayor a 7.5
 	console.log("Listar estudiantes con promedio mayor a 7.5");
 	const bestGrades = studentsMap.filter((est) => est.promedio > 7.5);
 	console.log("Los alumnos con promedio mayor a 7.5 son: ", bestGrades);
 	console.log("----------------------------");
 
-// 4. Usando find: Encontrar estudiante llamado 'María'
+	// 4. Usando find: Encontrar estudiante llamado 'María'
 	console.log("Encontrar estudiante llamado 'María'");
 	const findStudent = estudiantes.find((student) => student.nombre === "María");
 	console.log(findStudent);
 	console.log("----------------------------");
 
-//5. Usando reduce: Calcular la edad promedio de los estudiantes
+	//5. Usando reduce: Calcular la edad promedio de los estudiantes
 	console.log("Calcular la edad promedio de los estudiantes");
 	const ageMain =
 		estudiantes.reduce((acum, stud) => acum + stud.edad, 0) /
@@ -457,7 +457,7 @@ Este ejercicio presenta un arreglo de productos, y con distintos métodos mostra
 
 	console.log("/////////////////////////\n");
 
-/*
+	/*
 Se trabaja con un arreglo de estudiantes que incluye nombre, edad y un arreglo de calificaciones:
 
 foreach(): muestra nombre y edad
@@ -515,33 +515,33 @@ reduce(): calcula la edad promedio del grupo
 		},
 	];
 
-// 1. Usando forEach: Mostrar título y año de cada película
+	// 1. Usando forEach: Mostrar título y año de cada película
 	console.log("Título y año de cada película");
 	peliculas.forEach((movie) =>
 		console.log(`Título: ${movie.titulo}, Año: ${movie.año} `)
 	);
 	console.log("----------------------------");
 
-// 2. Usando map: Crear array de títulos en mayúsculas
+	// 2. Usando map: Crear array de títulos en mayúsculas
 	console.log("Títulos en mayúsculas");
 	const titlesMap = peliculas.map((movie) => movie.titulo.toUpperCase());
 	console.log(titlesMap);
 	console.log("----------------------------");
 
-// 3. Usando filter: Obtener películas de drama con rating mayor a 8.5
+	// 3. Usando filter: Obtener películas de drama con rating mayor a 8.5
 	const filteredBestDrama = peliculas.filter(
 		(movie) => movie.genero === "drama" && movie.rating > 8.5
 	);
 	console.log("Los dramas con rating mayor a 8.5 son: ", filteredBestDrama);
 	console.log("----------------------------");
 
-// 4. Usando find: Encontrar película estrenada en 2014
+	// 4. Usando find: Encontrar película estrenada en 2014
 	console.log("Encontrar filme estrenado en 2014");
 	const findMovie = peliculas.find((movie) => movie.año === 2014);
 	console.log(findMovie);
 	console.log("----------------------------");
 
-// 5. Usando reduce: Calcular la duración total de todas las películas
+	// 5. Usando reduce: Calcular la duración total de todas las películas
 	console.log("Calcular la duración total de todas las peliculas");
 	const moviesLength = peliculas.reduce(
 		(accum, movie) => accum + movie.duracion,

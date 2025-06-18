@@ -1,7 +1,6 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #fef9f4;
-    /* Fondo pastel suave */
+    font-family: 'Helvetica', Arial, Verdana, sans-serif;
+    background: #f7f6ff;
     color: #333;
     margin: 0;
     padding: 20px;
@@ -10,7 +9,7 @@ body {
 }
 
 main {
-    background: #fffdfa;
+    background: #fafeff;
     max-width: 550px;
     width: 100%;
     padding: 25px 40px;
@@ -60,18 +59,16 @@ h3:hover {
 #btnEjecutar {
     border-radius: 10px;
     background-color: #6a5acd;
-    /* violeta pastel */
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 1% 2%;
     text-align: center;
     display: block;
-    margin: 30px auto;
+    margin: 3rem auto;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.4s ease, transform 0.2s ease;
-    /*box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);*/
     box-shadow: 10px 10px 10px rgba(0, 0, 128, 0.6)
 }
 
@@ -81,7 +78,8 @@ h3:hover {
 }
 
 #btnText {
-   /* color: #5a4bb8;*/
+    font-family: Calibri, sans-serif;
+    font-size: 1.3rem;
     font-weight: bolder;
 
 }
