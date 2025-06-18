@@ -135,3 +135,8 @@ Utilizamos un arreglo de películas y aplicamos:
 3.  **filter()**: selecciona dramas con rating mayor a 8.5
 4.  **find()**: encuentra una película por el año de lanzamiento
 5.  **reduce()**: suma la duración total de todas las películas
+
+# Inicio
+En la pantalla de inicio, abra la consola de desarrollador, y presione el botón "Ejecutar"
+
+![Página de inicio](./img/start.png)
