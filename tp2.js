@@ -58,7 +58,8 @@ La función retorna el valor y no imprime por consola: console.log() se utiliza 
 	console.log("/////////////////////////////\n");
 
 	/* La lógica utilizada consistió en contar los espacios y sumar 1 a ese conteo, ya que el número de palabras en una frase es igual al número de espacios más uno. Este razonamiento funciona mientras el usuario no introduzca espacios dobles o espacios al inicio o al final de la frase. 
-En la variable sentence usamos el método split, que divide la frase en un arreglo de palabras, con un caracter establecido como delimitador (en este caso, el espacio) pero si el usuario introduce espacios dobles, el resultado no es el esperado. Por eso propusimos la solución 2b*/
+En la variable sentence usamos el método split, que divide la frase en un arreglo de palabras, con un caracter establecido como delimitador (en este caso, el espacio) pero si el usuario introduce espacios dobles, el resultado no es el esperado. Por eso propusimos la solución 2b
+*/
 
 	/*============================================================*/
 	console.log("\nSolución 2b: Contar palabras. Corregido");
@@ -237,7 +238,8 @@ El bucle for hace que el ejercicio se repita 3 veces.
 
 	console.log("/////////////////////////////\n");
 
-	/*En este ejercicio agregamos la lógica para el caso en el que el usuario no ingrese nada, o ingrese sólo espacios. 
+	/*
+En este ejercicio agregamos la lógica para el caso en el que el usuario no ingrese nada, o ingrese sólo espacios. 
 Una vez que el usuario ingresa datos válidos, comienza la lógica solicitada: 
 
 1. Pasamos a minúsculas todas las palabras y convertimos la frase en un array de palabras.
@@ -279,7 +281,8 @@ En este caso no controlamos espacios dobles para no complicar la lógica, ya que
 	let fibSequence = fibonacci(terms);
 	console.log(fibSequence);
 
-	/*Este ejercicio se puede resolver con un bucle como en esta primera solución, o aplicando recursividad, como lo haremos en la segunda solución
+	/*
+Este ejercicio se puede resolver con un bucle como en esta primera solución, o aplicando recursividad, como lo haremos en la segunda solución
 La secuencia de Fibonacci se inicia en 0 y 1, y continúa sumando los dos términos anteriores para formar el actual. Así,  se forma 0, 1, 1 (0+1) , 2 (1+1), 3 (1+2), 5 (2+3), etc.
 Siguiendo esa lógica construimos el bucle for, lo recorremos hasta el número de términos solicitados por el usuario, y vamos almacenando los términos en un arreglo llamado result. 
 En el caso de que el usuario indique cero o un número negativo, se devuelve el arreglo vacío.  
@@ -315,6 +318,12 @@ En el caso de que el usuario indique cero o un número negativo, se devuelve el 
 	console.log(recursiveSequence);
 	console.log("/////////////////////////\n");
 
+/*
+Esta segunda solución implementa *recursividad* para calcular los términos de Fibonacci.   
+La función se llama a sí misma con los dos términos anteriores hasta alcanzar los casos base.   
+Luego, se construye la secuencia repitiendo este cálculo en un bucle hasta completar la cantidad de términos deseados.
+*/
+
 	/*============================================================*/
 
 	console.log("\nSolución 8: Productos");
@@ -346,20 +355,20 @@ En el caso de que el usuario indique cero o un número negativo, se devuelve el 
 		{ id: 5, nombre: "Libro", precio: 15, stock: 100, categoria: "libros" },
 	];
 
-	// 1. Usando forEach: Mostrar en consola cada producto con su nombre y precio
+// 1. Usando forEach: Mostrar en consola cada producto con su nombre y precio
 	console.log("Mostrar en consola cada producto con su nombre y precio");
 	productos.forEach((producto) =>
 		console.log(`Artículo: ${producto.nombre}  $ ${producto.precio}`)
 	);
 	console.log("----------------------------");
 
-	// 2. Usando map: Crear un array con solo los nombres de los productos
+// 2. Usando map: Crear un array con solo los nombres de los productos
 	console.log("Mostrar un array que sólo liste los nombres de los productos");
 	const productsNamesMap = productos.map((producto) => producto.nombre);
 	console.log(productsNamesMap);
 	console.log("----------------------------");
 
-	// 3. Usando filter: Obtener productos electrónicos con stock mayor a 20
+// 3. Usando filter: Obtener productos electrónicos con stock mayor a 20
 	console.log("Listar los productos electrónicos con stock mayor a 20");
 	const electronicsBigStock = productos.filter(
 		(producto) => producto.categoria === "electrónica" && producto.stock > 20
@@ -370,13 +379,13 @@ En el caso de que el usuario indique cero o un número negativo, se devuelve el 
 	);
 	console.log("----------------------------");
 
-	// 4. Usando find: Encontrar el producto con id 3
+// 4. Usando find: Encontrar el producto con id 3
 	console.log("Encontrar el producto con id 3");
 	const producto3 = productos.find((producto) => producto.id === 3);
 	console.log("El producto con id 3 es: ", producto3);
 	console.log("----------------------------");
 
-	// 5. Usando reduce: Calcular el valor total del inventario (precio * stock)
+// 5. Usando reduce: Calcular el valor total del inventario (precio * stock)
 	console.log("Calcular el valor total del inventario");
 	const totalStockValue = productos.reduce((accumulator, producto) => {
 		return accumulator + producto.precio * producto.stock;
@@ -384,6 +393,15 @@ En el caso de que el usuario indique cero o un número negativo, se devuelve el 
 	console.log("El valor total del inventario es: $", totalStockValue);
 
 	console.log("/////////////////////////\n");
+
+/* 	
+Este ejercicio presenta un arreglo de productos, y con distintos métodos mostramos información útil:
+  1. **forEach()**: muestra cada producto con su nombre y precio
+  2. **map()**: genera un array con solo los nombres
+  3. **filter()**: obtiene los productos electrónicos con stock mayor a 20
+  4. **find()**: busca un producto por ID
+  5. **reduce()**: calcula el valor total del inventario (precio * stock)
+*/
 
 	/*============================================================*/
 
@@ -397,14 +415,14 @@ En el caso de que el usuario indique cero o un número negativo, se devuelve el 
 		{ id: 4, nombre: "Juan", edad: 19, calificaciones: [7, 6, 5, 8] },
 	];
 
-	// 1. Usando forEach: Mostrar nombre y edad de cada estudiante
+// 1. Usando forEach: Mostrar nombre y edad de cada estudiante
 	console.log("Mostrar nombre y edad de cada estudiante");
 	estudiantes.forEach((estudiante) =>
 		console.log(`Nombre: ${estudiante.nombre}, Edad: ${estudiante.edad}`)
 	);
 	console.log("----------------------------");
 
-	// 2. Usando map: Crear array de objetos con nombre y promedio de calificaciones
+// 2. Usando map: Crear array de objetos con nombre y promedio de calificaciones
 	console.log("Mostrar nombre y promedio de calificaciones");
 	const studentsMap = estudiantes.map((estudiante) => {
 		const suma = estudiante.calificaciones.reduce((acc, nota) => acc + nota, 0);
@@ -418,19 +436,19 @@ En el caso de que el usuario indique cero o un número negativo, se devuelve el 
 	console.log(studentsMap);
 	console.log("----------------------------");
 
-	// 3. Usando filter: Obtener estudiantes con promedio mayor a 7.5
+// 3. Usando filter: Obtener estudiantes con promedio mayor a 7.5
 	console.log("Listar estudiantes con promedio mayor a 7.5");
 	const bestGrades = studentsMap.filter((est) => est.promedio > 7.5);
 	console.log("Los alumnos con promedio mayor a 7.5 son: ", bestGrades);
 	console.log("----------------------------");
 
-	// 4. Usando find: Encontrar estudiante llamado 'María'
+// 4. Usando find: Encontrar estudiante llamado 'María'
 	console.log("Encontrar estudiante llamado 'María'");
 	const findStudent = estudiantes.find((student) => student.nombre === "María");
 	console.log(findStudent);
 	console.log("----------------------------");
 
-	//5. Usando reduce: Calcular la edad promedio de los estudiantes
+//5. Usando reduce: Calcular la edad promedio de los estudiantes
 	console.log("Calcular la edad promedio de los estudiantes");
 	const ageMain =
 		estudiantes.reduce((acum, stud) => acum + stud.edad, 0) /
@@ -438,6 +456,16 @@ En el caso de que el usuario indique cero o un número negativo, se devuelve el 
 	console.log("El promedio de edad de los estudiantes es: ", ageMain, " años");
 
 	console.log("/////////////////////////\n");
+
+/*
+Se trabaja con un arreglo de estudiantes que incluye nombre, edad y un arreglo de calificaciones:
+
+foreach(): muestra nombre y edad
+map(): calcula el promedio por estudiante
+filter(): selecciona aquellos con promedio mayor a 7.5
+find(): busca un estudiante específico por nombre
+reduce(): calcula la edad promedio del grupo
+*/
 
 	/*============================================================*/
 
@@ -487,33 +515,33 @@ En el caso de que el usuario indique cero o un número negativo, se devuelve el 
 		},
 	];
 
-	// 1. Usando forEach: Mostrar título y año de cada película
+// 1. Usando forEach: Mostrar título y año de cada película
 	console.log("Título y año de cada película");
 	peliculas.forEach((movie) =>
 		console.log(`Título: ${movie.titulo}, Año: ${movie.año} `)
 	);
 	console.log("----------------------------");
 
-	// 2. Usando map: Crear array de títulos en mayúsculas
+// 2. Usando map: Crear array de títulos en mayúsculas
 	console.log("Títulos en mayúsculas");
 	const titlesMap = peliculas.map((movie) => movie.titulo.toUpperCase());
 	console.log(titlesMap);
 	console.log("----------------------------");
 
-	// 3. Usando filter: Obtener películas de drama con rating mayor a 8.5
+// 3. Usando filter: Obtener películas de drama con rating mayor a 8.5
 	const filteredBestDrama = peliculas.filter(
 		(movie) => movie.genero === "drama" && movie.rating > 8.5
 	);
 	console.log("Los dramas con rating mayor a 8.5 son: ", filteredBestDrama);
 	console.log("----------------------------");
 
-	// 4. Usando find: Encontrar película estrenada en 2014
+// 4. Usando find: Encontrar película estrenada en 2014
 	console.log("Encontrar filme estrenado en 2014");
 	const findMovie = peliculas.find((movie) => movie.año === 2014);
 	console.log(findMovie);
 	console.log("----------------------------");
 
-	// 5. Usando reduce: Calcular la duración total de todas las películas
+// 5. Usando reduce: Calcular la duración total de todas las películas
 	console.log("Calcular la duración total de todas las peliculas");
 	const moviesLength = peliculas.reduce(
 		(accum, movie) => accum + movie.duracion,
@@ -527,3 +555,13 @@ En el caso de que el usuario indique cero o un número negativo, se devuelve el 
 
 	console.log("----------------------------");
 }
+
+/*
+Utilizamos un arreglo de películas y aplicamos:
+
+foreach(): muestra título y año
+map(): convierte títulos a mayúsculas
+filter(): selecciona dramas con rating mayor a 8.5
+find(): encuentra una película por el año de lanzamiento
+reduce(): suma la duración total de todas las películas
+*/
