@@ -22,7 +22,7 @@ La lógica utilizada consistió en contar los espacios y sumar 1 a ese conteo, y
 que el número de palabras en una frase es igual al número de espacios más uno.  
 Este razonamiento funciona mientras el usuario no introduzca espacios dobles o
 espacios al inicio o al final de la frase  
-En la variable sentence usamos el método _split()_, que divide la frase en un
+En la variable *sentence* usamos el método _split()_, que divide la frase en un
 arreglo de palabras, con un caracter establecido como delimitador (en este caso,
 el espacio) pero si el usuario introduce espacios dobles, el resultado no es el
 esperado.  
@@ -64,14 +64,14 @@ Con el bucle _for()_ se repite el ejercicio 3 veces.
 
 Aplicamos un prompt para que se solicite al usuario el ingreso de la edad del
 perro.  
- Se Multiplica la edad por 7, como indica la fórmula para edad canina.  
- El bucle _for()_ hace que el ejercicio se repita 3 veces.
+Se multiplica la edad por 7, como indica la fórmula para edad canina.  
+El bucle _for()_ hace que el ejercicio se repita 3 veces.
 
 ## Ejercicio 6 – Iniciar palabras con mayúscula
 
 En este ejercicio agregamos la lógica para el caso en el que el usuario no
 ingrese nada, o ingrese sólo espacios.  
- Una vez que el usuario ingresa datos válidos, comienza la lógica solicitada:
+Una vez que el usuario ingresa datos válidos, comienza la lógica solicitada:
 
 1.  Pasamos a minúsculas todas las palabras y convertimos la frase en un array
     de palabras.
@@ -88,22 +88,22 @@ no se solicita en el ejercicio.
 
 Este ejercicio se puede resolver con un bucle como en esta primera solución, o
 aplicando recursividad, como lo haremos en la segunda solución.  
- La secuencia de Fibonacci se inicia en 0 y 1, y continúa sumando los dos términos
+La secuencia de Fibonacci se inicia en 0 y 1, y continúa sumando los dos términos
 anteriores para formar el actual.  
- Así, se forma 0, 1, 1 (0+1) , 2 (1+1), 3 (1+2), 5 (2+3), etc.  
- Siguiendo esa lógica construimos el bucle for, lo recorremos hasta el número de
+Así, se forma 0, 1, 1 (0+1) , 2 (1+1), 3 (1+2), 5 (2+3), etc.  
+Siguiendo esa lógica construimos el bucle *for()*, lo recorremos hasta el número de
 términos solicitados por el usuario, y vamos almacenando los términos en un arreglo
 llamado **result[]**.  
- En el caso de que el usuario indique cero o un número negativo, se devuelve el
+En el caso de que el usuario indique cero o un número negativo, se devuelve el
 arreglo vacío.
 
 ## Ejercicio 7 – Sucesión de Fibonacci (recursivo)
 
 Esta segunda solución implementa _recursividad_ para calcular los términos de
 Fibonacci.  
- La función se llama a sí misma con los dos términos anteriores hasta alcanzar los
+La función se llama a sí misma con los dos términos anteriores hasta alcanzar los
 casos base.  
- Luego, se construye la secuencia repitiendo este cálculo en un bucle hasta
+Luego, se construye la secuencia repitiendo este cálculo en un bucle hasta
 completar la cantidad de términos deseados.
 
 ## Ejercicio 8 – Productos
