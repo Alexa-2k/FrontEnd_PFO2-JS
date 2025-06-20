@@ -2,9 +2,10 @@
 
 Este repositorio contiene una serie de ejercicios en JavaScript desarrollados
 como práctica. Cada ejercicio está comentado, explicando la lógica utilizada
-para resolverlo.
+para resolverlo.  
+La página desplegada puede verse en  
+https://alexa-2k.github.io/FrontEnd_PFO2-JS/
 
-La página desplegada puede verse en https://alexa-2k.github.io/FrontEnd_PFO2-JS/
 ---
 
 ## Ejercicio 1 – Calcular el área de un rectángulo
