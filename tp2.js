@@ -1,7 +1,7 @@
 document.getElementById("btnEjecutar").addEventListener("click", ejecutarTP2);
 
 function ejecutarTP2() {
-	console.log("¡Ejecutando TP2!");
+	console.log("PFO 2 - Grupo 2 - Comisión 2E\n");
 	console.log("/////////////////////////////\n");
 
 	console.log("\nSolución 1: calcular el área de un rectángulo");
